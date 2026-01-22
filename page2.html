@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Shree</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Playfair Display', serif;
+  background: #fff0f5;
+  color: #4a004e;
+}
+
+/* Poem card */
+.poem-box {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 80px 20px 30px; /* space for title on top */
+  border-radius: 20px;
+  text-align: center;
+  line-height: 1.7;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* FULL PHOTO — NO CROP */
+.poem-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("Gemini_Generated_Image_4z07ru4z07ru4z07.png")
+              center center / contain no-repeat;
+  opacity: 0.65;
+  z-index: -2;
+}
+
+/* Soft overlay */
+.poem-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,240,245,0.6);
+  z-index: -1;
+}
+
+/* 🎀 TITLE ON IMAGE (TOP-CENTER) */
+.title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+  color: #9d4edd; /* elegant soft purple */
+  font-weight: 500;
+  text-shadow: 0 2px 6px rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
+/* 🌸 Petals ABOVE everything */
+.petal {
+  position: fixed;
+  top: -10%;
+  width: 16px;
+  height: 16px;
+  background: pink;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(45deg);
+  opacity: 0.85;
+  animation: fall linear infinite;
+  z-index: 10;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) translateX(80px) rotate(360deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Music -->
+<audio autoplay loop playsinline>
+  <source src="birthdaypiano.mp3" type="audio/mpeg">
+</audio>
+
+<div class="poem-box">
+  <div class="title">Happy Birthday, Miss Perfectionist ✨</div>
+
+  <p>
+  Strong at heart, determined too,<br>
+  You chase your goals the way you do.<br>
+  Through every fall, through every test,<br>
+  You still keep giving life your best.
+  </p>
+
+  <p>
+  With hardworking days and dreams so true,<br>
+  The world feels warmer knowing you.<br>
+  A lovely soul, so kind and rare,<br>
+  A gentle strength you always wear.
+  </p>
+
+  <p>
+  Thank you for understanding me,<br>
+  In every storm, in every sea.<br>
+  For holding me when I would fall,<br>
+  For standing by me through it all.
+  </p>
+
+  <p>
+  May success meet you on every way,<br>
+  And happiness with you always stay.<br>
+  A steady light, a guiding star,<br>
+  Perfect just the way you are.
+  </p>
+
+  <p>
+  I wait, with hope sincere and clear,<br>
+  To see you win, year after year.
+  </p>
+
+  <p><strong>Happy Birthday shree 🌸</strong></p>
+  <p><em>ROHIT❄️</em></p>
+</div>
+
+<script>
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.className = "petal";
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.animationDuration = 6 + Math.random() * 4 + "s";
+  document.body.appendChild(petal);
+  setTimeout(() => petal.remove(), 10000);
+}
+setInterval(createPetal, 350);
+</script>
+
+</body>
+</html>
